@@ -1,0 +1,128 @@
+1. Using the echo command print in console "Hello World". Here is some info about echo command [https://discuss.codecademy.com/t/what-are-practical-uses-of-the-echo-command/394788]
+
+command: echo "Hello World"
+
+2. Create a new directory called new_dir.
+
+command: mkdir new_dir
+
+3. Delete/Remove the directory new_dir.
+
+command: rm -rf new_dir
+
+4. Copy the file sed.txt from the lorem folder and paste it to the folder lorem-copy folder.
+
+command: cp ./lorem/sed.txt ./lorem-copy
+
+5. Copy the other two files from the lorem folder to lorem-copy folder in just one line using semicolon ;.
+
+command: cp ./lorem/*.txt ./lorem-copy 
+
+6. Show the sed.txt file content from the lorem folder.
+
+command: cat ./lorem/sed.txt
+
+7. Show the at.txt file and lorem.txt file contents from lorem folder.
+
+command: cat ./lorem/at.txt && cat ./lorem/lorem.txt
+
+8. Print the first 3 rows in sed.txt file from lorem-copy folder.
+
+command: head -3 ./lorem-copy/sed.txt
+
+9. Print the last 3 rows in sed.txt file from lorem-copy folder.
+
+command: tail -3 /lorem-copy/sed.txt
+output: Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, 
+nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, 
+vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?Homo homini lupus
+
+10. Add Homo homini lupus. at the end of sed.txt file in the lorem-copy folder.
+
+
+command: echo "Homo homini lupus." >>./lorem-copy/sed.txt
+
+11. Print the last 3 rows in sed.txt file from lorem-copy folder. You should see Homo homini lupus..
+
+command: tail -3 ./lorem-copy/sed.txt
+
+output: nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, 
+vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?Homo homini lupus
+Homo homini lupus.
+
+12. sed command is used to replace the text in a file. Use the sed command to replace all occurances of et with ET in the file at.txt file present in the folder lorem. You can use the following link to refer to sed commands [https://www.linode.com/docs/guides/manipulate-text-from-the-command-line-with-sed/] Check the contents of the sed.txt file using cat command.
+
+command: sed -r 's/et/ET/' ./lorem/at.txt
+
+output: At vero eos ET accusamus ET iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum 
+deleniti atque corrupti quos dolores ET quas molestias excepturi sint occaecati cupiditate non 
+provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum ET dolorum fuga. 
+Et harum quidem rerum facilis est ET expedita distinctio. 
+Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod 
+maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. 
+Temporibus autem quibusdam ET aut officiis debitis aut rerum necessitatibus saepe eveniET 
+ut ET voluptates repudiandae sint ET molestiae non recusandae. 
+Itaque earum rerum hic tenETur a sapiente delectus, ut aut reiciendis voluptatibus maiores 
+alias consequatur aut perferendis doloribus asperiores repellat
+
+
+13. Find who is the system user.
+
+command: whoami
+
+output: minhnguyen
+
+14. Find the current path of the directory you are in.
+
+command: pwd
+
+output: /Users/minhnguyen/IronHack2023-2024/Bootcamp/Week_1/Day_1/Morning/lab-bash
+
+
+15. List all files with the extension .txt in lorem folder.
+
+command: ls ./lorem/*.txt 
+
+output: ./lorem/at.txt		./lorem/lorem.txt	./lorem/sed.txt
+
+
+16. Count the rows in sed.txt file from lorem folder. Look concatenate cat and wc with the pipe |.
+
+command: cat ./lorem/sed.txt|wc -l
+output: 9
+
+command: wc -l ./lorem/sed.txt
+output: 9 ./lorem/sed.txt
+
+command: cat ./lorem/sed.txt|wc
+output:  9     131     891 (9 lines, 131 words, 891 characters)
+
+17. Count the files which start with lorem in all directories.
+
+command: find ./ -type f -name "lorem*" | wc -l
+output: 2
+
+20. Store your name in a variable with read command.
+
+command: read your_name_var
+
+21. Print that variable.
+
+command: echo $your_name_var
+
+
+22. Create a new directory named with variable name.
+
+command: mkdir $your_name_var
+command: minhnguyen@Minhs-MBP-2 lab-bash % ls
+
+output: exercices	inputs		lorem		lorem-copy	minh nguyen	outputs		readme.md
+
+
+23. Remove that directory.
+
+command rm -rf $your_name_var
+
+check: (base) minhnguyen@Minhs-MBP-2 lab-bash % ls
+exercices	inputs		lorem		lorem-copy	outputs		readme.md
+
